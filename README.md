@@ -22,14 +22,10 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the server and system logs.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name       | Function   | IP Adress | Operating System |
 |------------|------------|-----------|------------------|
@@ -47,7 +43,6 @@ Only the Jump Box machine can accept connections from the Internet. Access to th
 - 69.221.219.111
 
 Machines within the network can only be accessed by the Jump Box VM (10.0.0.4).
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
 
 A summary of the access policies in place can be found in the table below.
 
@@ -65,7 +60,6 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 - The configuration can be easily redoployed on other machines.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - Install docker
 - Pull specific image of Elk - "sudo docker pull sebp/elk:761"
 - Run Elk container - "sudo docker run -p 5601:5601 -p 9200:9200 -p 5044:5044 -it --name elk sebp/elk:761"
@@ -94,10 +88,3 @@ SSH into the control node and follow the steps below:
 - Copy the playbook file (ElkStackPlayBook.yml) to ansible container in /etc/ansible.
 - Update the hosts and ansible.cfg files to include IPs in the network and remote user.
 - Run the playbook, and navigate to http://(your.VM.IP):5601/app/kibana to check that the installation worked as expected.
-
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
